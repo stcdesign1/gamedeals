@@ -1,0 +1,741 @@
+/*
+=============== 
+Variables
+===============
+*/
+
+#root {
+    --primary-color: #FF7700;
+    --primary-color-dark: #E04D01;
+    --primary-color-light: #FFA85C;
+
+    --secondary-color: #2A2550;
+    --secondary-color-dark: #211a33;
+    --secondary-color-light: #6F65B8;
+
+    --grey: #B3B1BE;
+    --grey-dark: #7D7A90;
+    --grey-light: #DDDDE3;
+}
+
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+input,
+select,
+textarea,
+button {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+::placeholder {
+    opacity: .8;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(3rem, 1fr) minmax(33.5rem, 117rem) minmax(3rem, 1fr);
+}
+
+.main-content {
+    grid-column: 2 / 3;
+}
+
+h1 {
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+
+/*
+=============== 
+Header
+===============
+*/
+
+.top-bar {
+    grid-column: 2 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.5rem;
+}
+
+.top-bar nav,
+.top-bar ul {
+    display: flex;
+}
+
+.top-bar ul {
+    align-items: center;
+    font-weight: 600;
+    color: var(--grey-dark);
+}
+
+.top-bar li {
+    margin-left: 2.6rem;
+    cursor: pointer;
+}
+
+.top-bar li:last-child {
+    margin-right: 4rem;
+}
+
+.top-bar-menu-icon {
+    display: none;
+}
+
+header {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 13rem;
+}
+
+.btn-secondary-light-bg {
+    border: 2px solid var(--primary-color);
+    border-radius: 5rem;
+    background-color: #fff;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-weight: 600;
+    height: 4rem;
+    padding: 0 2.2rem;
+}
+
+.logo {
+    color: var(--primary-color);   
+    font-size: 2.7rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.logo span {
+    color: var(--primary-color-dark);
+}
+
+.search {
+    align-self: center;
+    margin: 8rem 0 9rem 0;
+    position: relative;
+}
+
+.search input {
+    background-color: #f6f6f6;
+    border-radius: 2.4rem;
+    border: none;
+    color: var(--primary-color-dark);
+    height: 10rem;
+    width: 65vw;
+    max-width: 80rem;
+    padding-left: 4.6rem;
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+.search button {
+    height: 6.4rem;
+    width: 6.4rem;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    border: none;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 1.8rem;
+    right: 2.4rem;
+    cursor: pointer;
+}
+
+
+/*
+=============== 
+Featured Games
+===============
+*/
+
+.featured-games {
+    display: flex;
+    width: 100%;
+}
+
+.featured-card {
+    aspect-ratio: 1.28 / 1;
+    width: 60%;
+    position: relative;
+    cursor: pointer;
+}
+
+.featured-cards-small {
+    width: 40%;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.featured-card-small {
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+.featured-card-small:first-child {
+    margin-bottom: 1rem;
+}
+
+.featured-card-content {
+    color: #fff;
+    background: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0));
+    border-radius: 0 0 1.6rem 1.6rem;
+    padding: 4rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-height: 100%;
+}
+
+.featured-card-content h3 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.featured-card-content p {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.featured-card-price {
+    font-weight: 400;
+    opacity: .85;
+    text-decoration: line-through;
+}
+
+.featured-card-bg {
+    border-radius: 1.6rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.game-discount-percentage {
+    background-color: var(--primary-color-dark);
+    border-radius: 3.2rem;
+    width: 7rem;
+    height: 3.2rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #fff;
+    z-index: 10;
+}
+
+
+/*
+=============== 
+Latest Deals
+===============
+*/
+
+.latest-deals {
+    grid-column: 1 / -1;
+    margin-bottom: 8.5rem;
+}
+
+.card-section-heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4.8rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    column-gap: 3rem;
+    row-gap: 3rem;
+}
+
+.card {
+    position: relative;
+    align-self: start;
+    height: 100%;
+    cursor: pointer;
+}
+
+.card-img {
+    border-radius: 1.6rem 1.6rem 0 0;
+    width: 100%;
+    /* height: 25rem; */
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+.card-content {
+    border: 1px solid #DDDDE3;
+    border-radius: 0 0 1.6rem 1.6rem;
+    padding: 2rem;
+    margin-top: -1rem;
+}
+
+.card-content h3 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card-content p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--secondary-color-light);
+}
+
+.card-content span {
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--grey-dark);
+    text-decoration: line-through;
+}
+
+.card-discount {
+    position: absolute;
+    bottom: 10rem;
+    left: 2rem;
+}
+
+.section-arrows {
+    display: flex;
+    align-items: center;
+}
+
+.section-arrows img {
+    cursor: pointer;
+}
+
+.section-arrows img:first-child {
+    opacity: 65%;
+    margin-right: 2rem;
+    transform: rotate(180deg);
+}
+
+.arrow-in-circle-mid {
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    padding: 1.5rem 1.3rem 1.6rem 1.3rem;
+}
+
+/*
+=============== 
+Popular games
+===============
+*/
+
+.popular-deals {
+    /* grid-column: 1 / -1; */
+    background-color: var(--secondary-color);
+    border-radius: 2.4rem;
+    padding: 6rem 5.5rem 5.5rem 5.5rem;
+    margin: 0 -5.5rem;
+    position: relative;
+}
+
+.popular-deals-heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4.4rem;
+    color: #fff;
+}
+
+.popular-deals-heading button {
+    background-color: #fff;
+    border: none;
+    border-radius: 1.2rem;
+    color: var(--primary-color-dark);
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0 1.2rem 0 1.6rem;
+    display:flex;
+    align-items: center;
+    height: 4.8rem;
+}
+
+.popular-deals-heading button img {
+    margin-left: 2rem;
+}
+
+.card-content-dark-bg {
+    background-color: #fff;
+    border: none;
+}
+
+/*
+=============== 
+Footer
+===============
+*/
+
+footer {
+    grid-column: 1 / -1;
+    background-color: var(--secondary-color-dark);
+    color: #fff;
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: minmax(3rem, 1fr) minmax(33.5rem, 117rem) minmax(3rem, 1fr);
+}
+
+.footer-content {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 4rem;
+    padding: 8rem 0;
+}
+
+.footer-content a {
+    color: var(--grey);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.footer-content h5 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.footer-logo-and-social {
+    grid-column: span 2;
+}
+
+.footer-social-icons img {
+    margin-top: 2.6rem;
+    margin-right: 1.2rem;
+}
+
+.footer-quick-links {
+    grid-column: 4 / span 1;
+    width: max-content;
+}
+
+.footer-quick-links li:first-child {
+    margin-bottom: 1.5rem;
+}
+
+.footer-contact {
+    grid-column: 5 / span 1;
+    width: max-content;
+}
+
+.footer-copyright {
+    grid-column: 2 / 3;
+    color: var(--grey);
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+}
+
+.footer-copyright::before {
+    content: " ";
+    display: inline-block;
+    height: 1px;
+    width: 100%;
+    background-color: #382e53;
+    margin-bottom: 1.8rem;
+}
+
+
+/*
+=============== 
+Loading Skeletons
+===============
+*/
+
+.card-content-skeleton {
+    background-color: #fafafa;
+    border: none;
+    border-radius: 0 0 1.6rem 1.6rem;
+    padding: 2rem;
+    margin-top: -4.3rem;
+}
+
+.card-discount-skeleton {
+    position: absolute;
+    bottom: 6rem;
+    left: 2rem;
+}
+
+.featured-card .game-discount-percentage {
+    width: 7rem;
+    height: 3.2rem;
+    border-radius: 3.2rem;
+}
+
+.game-discount-percentage-skeleton {
+    margin-bottom: 1.4rem;
+}
+
+
+/*
+=============== 
+Responsive
+===============
+*/
+
+@media screen and (min-width: 1000px) {
+    .featured-card .featured-card-content h3 {
+        font-size: 3rem;
+    }
+
+    .featured-card .featured-card-content p {
+        font-size: 2.4rem;
+    }
+
+    .featured-card .game-discount-percentage {
+        width: 10rem;
+        height: 4.2rem;
+        font-size: 2rem;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+    }
+
+    .game-discount-percentage-skeleton {
+        margin-bottom: -1rem;
+    }
+
+}
+
+
+@media screen and (max-width: 1060px) {
+    .latest-deals .card:nth-child(4) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 875px) {
+    .featured-games {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .featured-card {
+        width: 100%;
+        aspect-ratio: 1.7 / 1;
+    }
+
+    .featured-cards-small {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+
+    .featured-card-small {
+        aspect-ratio: 1.5 / 1;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .featured-card-small:first-child {
+        margin-right: 1rem;
+    }
+
+    .cards {
+        gap: 2rem 2rem;
+    }
+
+    .search {
+        margin: 8rem 0 8rem 0;
+    }
+
+    .search input {
+        border-radius: 2.4rem;
+        height: 8rem;
+        font-size: 2rem;
+        padding-left: 3.6rem;
+    }
+
+    .search button {
+        height: 5rem;
+        width: 5rem;
+        top: 1.5rem;
+        right: 2rem;
+    }
+
+}
+
+
+@media screen and (max-width: 759px) {
+    .popular-deals-heading button {
+        position: absolute;
+        left: 5.5rem;
+        bottom: 5rem;
+    }
+
+    .popular-deals .cards {
+        margin-bottom: 8rem;
+    }
+
+    .latest-deals .cards .card:nth-child(3) {
+        display: none;
+    }
+
+    .featured-card-small h3 {
+        font-size: 2rem;
+    }
+
+    .footer-content {
+        grid-column: 2 / 3;
+        display: grid;
+        padding: 8rem 0;
+    }
+    
+    .footer-logo-and-social {
+        grid-column: auto;
+        width: 30rem;
+    }
+    
+    .footer-social-icons img {
+        margin-top: 2.6rem;
+        margin-right: 1.2rem;
+    }
+    
+    .footer-quick-links {
+        grid-column: auto;
+        width: max-content;
+    }
+    
+    .footer-quick-links li:first-child {
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer-contact {
+        grid-column: auto;
+        width: max-content;
+    }
+
+}
+
+@media screen and (max-width: 675px) {
+    .featured-cards-small {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .featured-card,
+    .featured-card-small {
+        aspect-ratio: 1.5 / 1;
+    }
+
+    .top-bar-navigation ul,
+    .top-bar-navigation button {
+        display: none;
+    }
+
+    .top-bar-menu-icon {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .search,
+    .search input {
+        width: 100%;
+    }
+
+    .footer-logo-and-social {
+        grid-column: 1 / -1;
+        margin-bottom: 3rem;
+    }
+
+
+}
+
+@media screen and (max-width: 519px) {
+    .latest-deals .card:nth-child(2) {
+        display: none;
+    }
+
+    .container {
+        grid-template-columns: minmax(2rem, 1fr) minmax(33.5rem, 117rem) minmax(2rem, 1fr);
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .search {
+        margin: 6rem 0;
+    }
+
+    .search input {
+        border-radius: 2rem;
+        height: 7rem;
+        font-size: 1.8rem;
+        padding-left: 3rem;
+    }
+
+    .search button {
+        height: 4.4rem;
+        width: 4.4rem;
+        top: 1.3rem;
+        right: 1.6rem;
+    }
+
+    /* .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-quick-links,
+    .footer-contact {
+        margin-top: 3rem;
+    }
+
+    .footer-quick-links h5,
+    .footer-contact h5 {
+        margin-bottom: 1rem;
+    } */
+
+}
