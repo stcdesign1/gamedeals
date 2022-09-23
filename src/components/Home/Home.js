@@ -17,6 +17,7 @@ const fetchData = async () => {
     // if (!responses.ok) {
     //     let message = `An error has ocurred: ${responses.status}`;
     //     throw new Error(message); 
+    //
     // }
 
     let latestDeals = await responses[0].json();
